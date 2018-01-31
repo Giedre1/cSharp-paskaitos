@@ -11,6 +11,7 @@ namespace _15_01_PVZ
         public List<Studentas> Studentai { get; set; } = new List<Studentas>();    // norėsim sudėti daug to paties objektų 
         /*public Grupe()
          {
+            Studentas stud;
             Studentai = new List<Studentas>();
          }
          */
@@ -22,7 +23,7 @@ namespace _15_01_PVZ
             Studentai.Add(new Studentas("Liza", "Lizaitė", 170, 24, 'M'));
 
             //var studentas = new Studentas("aaa", "bbb", 30, 40, 'V');
-           // Studentai.Add = Studentas();  ?????
+           // Studentai.Add(studentas);  ?????
         }
 
         public void Isvedimas()
@@ -47,9 +48,23 @@ namespace _15_01_PVZ
             vyriausias.Isvedimas();
             Console.WriteLine();
 
-            Console.WriteLine("Kiek moterų"); // kazkodel grazino tik viena moteri, nors yra dvi :)
+            Console.WriteLine("Kiek moterų");
             var moterys = KiekMoteru();
-            moterys.Isvedimas();
+            foreach (var moteris in moterys)
+            {
+                moteris.Isvedimas();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Kiek vyrų");
+            var vyrai = KiekVyru();
+            foreach (var vyras in vyrai)
+            {
+                vyras.Isvedimas();
+            }
+            Console.WriteLine();
+
+            Console.WriteLine("Studentų amžiaus vidurkis: " + AmziuVidurkis());
             Console.WriteLine();
         }
 
@@ -86,24 +101,47 @@ namespace _15_01_PVZ
         }
 
         // kiek moteru
-        public Studentas KiekMoteru()
+        public List<Studentas> KiekMoteru()
         {
-            var moterys = Studentai.First();
+            List<Studentas> moterys = new List<Studentas>();
 
             foreach (var studentas in Studentai)
             {
                 if (studentas.Lytis == 'M')
                 {
-                    moterys = studentas;
+                    moterys.Add(studentas);
                 }
             }
             return moterys;
         }
 
         // kiek vyru
+        public List<Studentas> KiekVyru()
+        {
+            List<Studentas> vyrai = new List<Studentas>();
+
+            foreach (var studentas in Studentai)
+            {
+                if (studentas.Lytis == 'V')
+                {
+                    vyrai.Add(studentas);
+                }
+            }
+            return vyrai;
+        }
+
+
         // amziu vidurkis
-
-        
-
+        public double AmziuVidurkis()
+        {
+            double amziuSuma = 0;
+            int studentuSk = 0;
+            foreach (var studentas in Studentai)
+            {
+                amziuSuma += studentas.Amzius;
+                studentuSk++;
+            }
+            return amziuSuma / studentuSk;
+        }
     }
 }

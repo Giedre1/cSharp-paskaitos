@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace _15_00_PVZ
 {
-    // NEPAVYKUSI UŽDUOTIS - TAISYTI
-
     class Automobilis
     {
         // prop -> tab x 2
@@ -27,10 +25,16 @@ namespace _15_00_PVZ
         {
 
         }
-
+        
         public Automobilis(string spalva, string marke, string modelis, int rida, int pavaros, double darbinisTuris, int galiaKw)
         {
-
+            this.Spalva = Spalva;
+            Marke = marke;
+            Modelis = modelis;
+            Rida = rida;
+            Pavaros = pavaros;
+            DarbinisTuris = darbinisTuris;
+            GaliaKw = galiaKw;
         }
         
         public void Isvedimas()
@@ -42,7 +46,6 @@ namespace _15_00_PVZ
             Console.WriteLine("Darbinis tūris: " + DarbinisTuris);
             Console.WriteLine("Galia, KW:" + GaliaKw);
             Console.WriteLine();
-
         }
 
         public void Ivedimas()
@@ -65,13 +68,13 @@ namespace _15_00_PVZ
             Console.WriteLine("Įveskite darbinį turį: ");
             //DarbinisTuris = Convert.ToDouble(Console.ReadLine());
 
-            string darbTuris = Console.ReadLine();
-            double darbTurisSk;
+            string darbTuris = Console.ReadLine(); // nuskaitom iš konsolės kaip tekstą
+            double darbTurisSk; // nurodome, kur saugosime skaičių, jeigu pavyks jį konvertuoti
             bool pavyko = double.TryParse(darbTuris, out darbTurisSk);
 
             if (pavyko)
             {
-                DarbinisTuris = darbTurisSk; // jei pavyko
+                DarbinisTuris = darbTurisSk; // jei pavyko, priskiriame naują reikšmę
             }
             else // jei nepavyko 
             {
@@ -80,9 +83,6 @@ namespace _15_00_PVZ
 
             Console.WriteLine("Įveskite automobilio galią: ");
             GaliaKw = Convert.ToInt32(Console.ReadLine());
-
-
-            // ....
         }
     }
     class Program
@@ -108,6 +108,8 @@ namespace _15_00_PVZ
             Console.WriteLine(auto.DarbinisTuris);
             Console.WriteLine();
 
+            auto.Isvedimas();
+
             var auto2 = new Automobilis // objekto inicializavimas
             {
                 Marke = "Audi",
@@ -126,6 +128,8 @@ namespace _15_00_PVZ
                 Console.WriteLine(auto2.Spalva);
                 Console.WriteLine(auto2.DarbinisTuris);
                 Console.WriteLine();
+
+            auto2.Isvedimas();
 
             var auto3 = new Automobilis("Audi", "A6", "Juoda", 120, 6, 2.0, 120);
             

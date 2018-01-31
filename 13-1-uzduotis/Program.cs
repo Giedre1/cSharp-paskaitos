@@ -41,12 +41,10 @@ namespace _13_1_uzduotis
             }
             var maziausias = sarasas.Min();
             Console.WriteLine("Mažiausias skaičius iš sąrašo: " + maziausias);
-
             Console.WriteLine();
 
             var didziausias = sarasas.Max();
             Console.WriteLine("Didžiausias skaičius iš sąrašo: " + didziausias);
-
             Console.WriteLine();
 
             var vidurkis = sarasas.Average();

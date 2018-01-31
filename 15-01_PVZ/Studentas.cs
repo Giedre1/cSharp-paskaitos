@@ -14,6 +14,9 @@ namespace _15_01_PVZ
         public int Amzius { get; set; }
         public char Lytis { get; set; }
 
+        
+        public int MyProperty { get; private set; }
+
         public Studentas()
         {
 
