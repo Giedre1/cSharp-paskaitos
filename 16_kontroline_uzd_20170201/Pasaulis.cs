@@ -9,7 +9,7 @@ namespace _16_kontroline_uzd_20170201
     public class Pasaulis
     {
         public List<Salis> SaliuSarasas { get; private set; } = new List<Salis>();
-        //public Miestas miestas { get; private set; }
+        public Miestas miestas { get; private set; }
 
         public Miestas DaugiausiaiGyventoju()
         {

@@ -25,5 +25,17 @@ namespace _16_kontroline_uzd_20170201
                 MiestuSarasas.Add(miestas);
             }
         }
+        public double VidutinisAtlyginimas()
+        {
+            double suma = 0;
+            int kiek = 0;
+
+            foreach (var miestas in MiestuSarasas)
+            {
+                suma += miestas.VidutinisAtlyginimas;
+                kiek++;
+            }
+            return suma / kiek;
+        }
     }
 }

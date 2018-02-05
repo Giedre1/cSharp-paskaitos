@@ -11,13 +11,15 @@ namespace _16_kontroline_uzd_20170201
         public string Pavadinimas { get; private set; }
         public int GyventojuSkaicius { get; private set; }
         public double PlotasKvKm { get; private set; }
+        public double VidutinisAtlyginimas { get; private set; }
         public double GyvTankis { get; private set; }
 
-        public Miestas(string pavadinimas, int gyventojuSkaicius, double plotasKvKm)
+        public Miestas(string pavadinimas, int gyventojuSkaicius, double plotasKvKm, double vidutinisAtlyginimas)
         {
             Pavadinimas = pavadinimas;
             GyventojuSkaicius = gyventojuSkaicius;
             PlotasKvKm = plotasKvKm;
+            VidutinisAtlyginimas = vidutinisAtlyginimas;
             GyvTankis = showTankis();
         }
         
@@ -33,6 +35,11 @@ namespace _16_kontroline_uzd_20170201
             GyventojuSkaicius = Convert.ToInt32(isskaidyta[1]);
             PlotasKvKm = Convert.ToDouble(isskaidyta[2]);
             GyvTankis = Math.Round((GyventojuSkaicius / PlotasKvKm), 2);
+
+            if (isskaidyta.Length > 3)
+            {
+                VidutinisAtlyginimas = Convert.ToDouble(isskaidyta[3]);
+            }
         }
     }
 }
