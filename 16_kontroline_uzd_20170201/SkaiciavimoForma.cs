@@ -18,7 +18,7 @@ namespace _16_kontroline_uzd_20170201
 
             foreach (var salis in pasaulis.SaliuSarasas)
             {
-                if (salis.Pavadinimas == "Lietuva")
+                if (salis.Pavadinimas == "Lietuva") // vidutinio atlyginimo duomenis suvedžiau tik Lietuvos
                 {
                     label17.Text = salis.Pavadinimas;
                     textBox7.Text = salis.VidutinisAtlyginimas().ToString("#.##");
