@@ -31,7 +31,7 @@ namespace _16_kontroline_uzd_20170201
                     var salis = new Salis(failas);
                     pasaulis.SaliuSarasas.Add(salis);
 
-                    var skirtukas = new TabPage(salis.Pavadinimas);
+                    var skirtukas = new TabPage(String.Format("{0} ({1})", salis.Pavadinimas, salis.Zemynas));
                     tabControl1.Controls.Add(skirtukas);
 
                     skirtukas.Controls.Add(new DataGridView()
@@ -42,8 +42,6 @@ namespace _16_kontroline_uzd_20170201
 
                 }
             }
-
-
         }
 
         private void baigtiToolStripMenuItem_Click(object sender, EventArgs e)

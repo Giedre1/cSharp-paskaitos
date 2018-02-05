@@ -15,21 +15,24 @@ namespace _16_kontroline_uzd_20170201
         public SkaiciavimoForma(Pasaulis pasaulis)
         { 
             InitializeComponent();
-            //label1.Text = "Daugiausiai gyventojų:";
+            
             label2.Text = pasaulis.DaugiausiaiGyventoju().Pavadinimas;
             textBox1.Text = pasaulis.DaugiausiaiGyventoju().GyventojuSkaicius.ToString();
-
-            //label6.Text = "Mažiausiai gyventojų:";
+                        
             label5.Text = pasaulis.MaziausiaiGyventoju().Pavadinimas;
             textBox2.Text = pasaulis.MaziausiaiGyventoju().GyventojuSkaicius.ToString();
-
-            //label7.Text = "Didžiausias plotas:";
+                        
             label9.Text = pasaulis.DidziausiasPlotas().Pavadinimas;
             textBox3.Text = pasaulis.DidziausiasPlotas().PlotasKvKm.ToString();
 
-            //label8.Text = "Mažiausias plotas:";
             label10.Text = pasaulis.MaziausiasPlotas().Pavadinimas;
             textBox4.Text = pasaulis.MaziausiasPlotas().PlotasKvKm.ToString();
+
+            label13.Text = pasaulis.DidziausiasTankis().Pavadinimas;
+            textBox5.Text = pasaulis.DidziausiasTankis().GyvTankis.ToString("#.##");
+
+            label15.Text = pasaulis.MaziausiasTankis().Pavadinimas;
+            textBox6.Text = pasaulis.MaziausiasTankis().GyvTankis.ToString("#.##");
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -38,6 +41,11 @@ namespace _16_kontroline_uzd_20170201
         }
 
         private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
         }

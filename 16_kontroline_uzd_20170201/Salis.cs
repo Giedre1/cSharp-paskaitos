@@ -24,7 +24,6 @@ namespace _16_kontroline_uzd_20170201
                 var miestas = new Miestas(tekstas[i]);
                 MiestuSarasas.Add(miestas);
             }
-    
         }
     }
 }
